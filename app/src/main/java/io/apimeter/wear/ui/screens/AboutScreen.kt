@@ -25,6 +25,7 @@ fun AboutScreen(haptics: WearHaptics) {
             Text(text = "关于应用", style = MaterialTheme.typography.titleSmall)
         }
         Caption(text = stringResource(R.string.app_name) + " " + BuildConfig.VERSION_NAME)
+        Body("早期预览版本，功能与界面仍可能变动。")
 
         SectionHeader(text = "备份加密")
         Body("先用 scrypt 派生密钥、AES-256-GCM 加密再上传，服务器上只有密文。")
