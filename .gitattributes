@@ -1,0 +1,8 @@
+# 统一换行处理：脚本固定 LF，Windows 批处理用 CRLF
+* text=auto
+gradlew text eol=lf
+*.sh text eol=lf
+*.bat text eol=crlf
+*.jar binary
+*.png binary
+*.webp binary

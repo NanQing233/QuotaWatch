@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">余额表</string>
+
+    <!-- providers -->
+    <string name="provider_openai">OpenAI</string>
+    <string name="provider_openai_short">OpenAI</string>
+    <string name="provider_anthropic">Anthropic Claude</string>
+    <string name="provider_anthropic_short">Claude</string>
+    <string name="provider_volc_ark">火山方舟</string>
+    <string name="provider_volc_ark_short">方舟</string>
+    <string name="provider_tencent_tokenhub">腾讯云 TokenHub</string>
+    <string name="provider_tencent_tokenhub_short">TokenHub</string>
+    <string name="provider_deepseek">DeepSeek</string>
+    <string name="provider_deepseek_short">DeepSeek</string>
+    <string name="provider_moonshot">Moonshot Kimi</string>
+    <string name="provider_moonshot_short">Kimi</string>
+
+    <string name="provider_openai_note">需要组织 Admin Key（sk-admin 开头），可查 Token 用量与成本</string>
+    <string name="provider_anthropic_note">需要 Admin API Key（sk-ant-admin），可查 Messages 用量</string>
+    <string name="provider_volc_ark_note">需要 AK/SK，按 ApiKeyID 查询推理用量</string>
+    <string name="provider_tencent_tokenhub_note">需要 SecretId/SecretKey，按 apikey 维度统计</string>
+    <string name="provider_deepseek_note">官方仅提供余额查询，无用量明细 API</string>
+    <string name="provider_moonshot_note">官方仅提供余额查询，无用量明细 API</string>
+
+    <!-- credential fields -->
+    <string name="field_api_key">API Key</string>
+    <string name="field_admin_key">Admin Key</string>
+    <string name="field_access_key">Access Key (AK)</string>
+    <string name="field_secret_key">Secret Key (SK)</string>
+    <string name="field_secret_id">SecretId</string>
+    <string name="field_secret_key_tencent">SecretKey</string>
+    <string name="field_region">Region</string>
+    <string name="field_endpoint">Endpoint 资源 ID（可选）</string>
+    <string name="field_api_key_id">ApiKeyID（可选）</string>
+    <string name="field_base_url">自定义 Base URL（可选）</string>
+    <string name="field_label">备注名称</string>
+    <string name="field_required">必填</string>
+    <string name="field_optional">可选</string>
+
+    <string name="common_ok">好</string>
+    <string name="common_cancel">取消</string>
+    <string name="common_save">保存</string>
+    <string name="common_delete">删除</string>
+    <string name="common_back">返回</string>
+    <string name="common_retry">重试</string>
+    <string name="common_loading">正在查询…</string>
+    <string name="common_never">从未同步</string>
+    <string name="common_none">未添加</string>
+    <string name="common_error">出错了</string>
+    <string name="common_on">开启</string>
+    <string name="common_off">关闭</string>
+    <string name="common_auto">自动</string>
+    <string name="common_direct">直连</string>
+
+    <!-- surfaces -->
+    <string name="complication_overview_label">总览</string>
+    <string name="tile_overview_label">总览</string>
+</resources>

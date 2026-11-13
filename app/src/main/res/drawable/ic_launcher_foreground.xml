@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  余额表图标（G1 造型 / S1 Google 蓝）。
+
+  造型只有三笔：一条 240° 的轨道环、一段已用量弧、一根胶囊指针，加一个实心枢轴点。
+  等宽圆头描边、平涂配色、没有刻度/高光/辉光——Google 原生图标的语言。
+
+  108dp 画布，图形整体缩到 0.94，使最外沿（半径 33.75 × 0.94 ≈ 31.7）落在
+  自适应图标 66dp 安全区以内，任何形状的遮罩都不会切到。
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <group
+        android:pivotX="54"
+        android:pivotY="54"
+        android:scaleX="0.94"
+        android:scaleY="0.94">
+
+        <!-- 轨道：150° → 390°，底部留 120° 缺口 -->
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M28.02,69 A30,30 0 1 1 79.98,69"
+            android:strokeColor="#3C4043"
+            android:strokeLineCap="round"
+            android:strokeWidth="7.5" />
+
+        <!-- 已用量：150° → 335° -->
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M28.02,69 A30,30 0 1 1 81.19,41.32"
+            android:strokeColor="#8AB4F8"
+            android:strokeLineCap="round"
+            android:strokeWidth="7.5" />
+
+        <!-- 指针：胶囊线段，圆头 -->
+        <path
+            android:fillColor="#00000000"
+            android:pathData="M54,54 L64.47,40.6"
+            android:strokeColor="#F1F3F4"
+            android:strokeLineCap="round"
+            android:strokeWidth="4.2" />
+
+        <!-- 枢轴：实心圆点 -->
+        <path
+            android:fillColor="#4285F4"
+            android:pathData="M54,54 m-5.2,0 a5.2,5.2 0 1,0 10.4,0 a5.2,5.2 0 1,0 -10.4,0" />
+    </group>
+</vector>

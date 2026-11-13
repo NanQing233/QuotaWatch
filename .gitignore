@@ -1,0 +1,48 @@
+# Gradle / Android
+.gradle/
+build/
+local.properties
+*.iml
+.idea/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# 随仓库下载的工具链（gradle 发行版、android sdk），不要提交
+tools/
+
+# 系统
+.DS_Store
+Thumbs.db
+
+# 与本项目无关的历史目录
+.rtmp/
+_ref/
+muxkit-rs/
+gdirect-android/
+audit/
+ops/
+pr-work/
+runs/
+__pycache__/
+
+# 本地临时目录
+.tmp/
+.tmpcls/
+.tmpcls2/
+tmp/
+
+# 调试截图
+.shots/
+
+# 本地探测脚本与产物
+scan_ports*.ps1
+smb_*.bat
+smb*_probe.py
+wsd_probe.py
+open_ports*.txt
+upstream-main-whale-widget.js
+muxkit-render-buffering.patch
+
+# 起草稿
+README-draft.md
