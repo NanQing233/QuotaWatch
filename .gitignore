@@ -44,5 +44,12 @@ open_ports*.txt
 upstream-main-whale-widget.js
 muxkit-render-buffering.patch
 
+# 签名材料（密钥库与口令不入库）
+*.jks
+*.keystore
+*.p12
+keystore.properties
+secrets.properties
+
 # 起草稿
 README-draft.md

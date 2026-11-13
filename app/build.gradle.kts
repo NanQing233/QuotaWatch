@@ -1,9 +1,22 @@
+import java.io.File
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
     alias(libs.plugins.kotlin.serialization)
 }
+
+/*
+ * 发布签名：口令一律走环境变量，不入库。
+ * 未提供 QUOTAWATCH_STORE_PASSWORD 时回退 debug 签名，保证 clone 下来即可构建（产物不可分发）。
+ */
+val releaseStorePath: String = System.getenv("QUOTAWATCH_STORE_FILE")
+    ?: "E:\\新建文件夹\\apk密钥\\quotawatch-release.p12"
+val releaseStorePassword: String? = System.getenv("QUOTAWATCH_STORE_PASSWORD")
+val releaseKeyAlias: String = System.getenv("QUOTAWATCH_KEY_ALIAS") ?: "quotawatch"
+val hasReleaseSigning: Boolean =
+    !releaseStorePassword.isNullOrBlank() && File(releaseStorePath).isFile
 
 android {
     namespace = "io.apimeter.wear"
@@ -17,6 +30,18 @@ android {
         versionName = "0.1.0"
     }
 
+    signingConfigs {
+        if (hasReleaseSigning) {
+            create("release") {
+                storeFile = file(releaseStorePath)
+                storeType = "PKCS12"
+                storePassword = releaseStorePassword
+                keyAlias = releaseKeyAlias
+                keyPassword = System.getenv("QUOTAWATCH_KEY_PASSWORD") ?: releaseStorePassword
+            }
+        }
+    }
+
     buildTypes {
         debug {
             applicationIdSuffix = ".debug"
@@ -26,7 +51,11 @@ android {
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
-            signingConfig = signingConfigs.getByName("debug")
+            signingConfig = if (hasReleaseSigning) {
+                signingConfigs.getByName("release")
+            } else {
+                signingConfigs.getByName("debug")
+            }
         }
     }
 
